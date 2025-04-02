@@ -80,7 +80,7 @@ export async function buscarCategoria() {
   if (categoriaEncontrada) {
     console.log(`Categoria encontrada: ${JSON.stringify(categoriaEncontrada)}`);
   } else {
-    console.log("❌ Categoria não encontrada!");
+    console.log("Categoria não encontrada!");
   }
 }
 
@@ -102,7 +102,7 @@ export async function atualizarCategoria() {
   const categoria = categorias.find((c) => c.id === id);
 
   if (!categoria) {
-    console.log("❌ Categoria não encontrada!");
+    console.log("Categoria não encontrada!");
     return;
   }
 
@@ -115,7 +115,7 @@ export async function atualizarCategoria() {
   categoria.descricao = novaDescricao;
   categoria.dataAtualizacao = obterDataHoraAtual();
 
-  console.log(`✅ Categoria "${categoria.nome}" atualizada com sucesso!`);
+  console.log(`Categoria "${categoria.nome}" atualizada com sucesso!`);
 }
 
 export async function deletarCategoria() {
@@ -133,11 +133,11 @@ export async function deletarCategoria() {
   const indice = categorias.findIndex((c) => c.id === id);
 
   if (indice === -1) {
-    console.log("❌ Categoria não encontrada!");
+    console.log("Categoria não encontrada!");
     return;
   }
 
   const categoriaRemovida = categorias.splice(indice, 1)[0];
 
-  console.log(`✅ Categoria "${categoriaRemovida.nome}" removida com sucesso!`);
+  console.log(`Categoria "${categoriaRemovida.nome}" removida com sucesso!`);
 }

@@ -25,7 +25,7 @@ export async function adicionarProduto() {
 
   const categoria = categorias.find((c) => c.id === resposta.categoriaId);
   if (!categoria) {
-    console.log("❌ Categoria inválida!");
+    console.log("Categoria inválida!");
     return;
   }
 
@@ -103,9 +103,9 @@ export async function buscarProduto() {
   }
 
   if (produtoEncontrado) {
-    console.log(`✅ Produto encontrado: ${JSON.stringify(produtoEncontrado, null, 2)}`);
+    console.log(`Produto encontrado: ${JSON.stringify(produtoEncontrado, null, 2)}`);
   } else {
-    console.log("❌ Produto não encontrado!");
+    console.log("Produto não encontrado!");
   }
 }
 
@@ -124,7 +124,7 @@ export async function atualizarProduto() {
   const produto = produtos.find((p) => p.id === id);
 
   if (!produto) {
-    console.log("❌ Produto não encontrado!");
+    console.log("Produto não encontrado!");
     return;
   }
 
@@ -138,7 +138,7 @@ export async function atualizarProduto() {
 
   const categoria = categorias.find((c) => c.id === resposta.novaCategoriaId);
   if (!categoria) {
-    console.log("❌ Categoria inválida!");
+    console.log("Categoria inválida!");
     return;
   }
 
@@ -149,7 +149,7 @@ export async function atualizarProduto() {
   produto.categoriaId = resposta.novaCategoriaId;
   produto.dataAtualizacao = obterDataHoraAtual();
 
-  console.log(`✅ Produto "${produto.nome}" atualizado com sucesso!`);
+  console.log(`Produto "${produto.nome}" atualizado com sucesso!`);
 }
 
 export async function deletarProduto() {
@@ -170,12 +170,12 @@ export async function deletarProduto() {
   const indice = produtos.findIndex((p) => p.id === id);
 
   if (indice === -1) {
-    console.log("❌ Produto não encontrado!");
+    console.log("Produto não encontrado!");
     return;
   }
 
   const produtoRemovido = produtos.splice(indice, 1)[0];
 
-  console.log(`✅ Produto "${produtoRemovido.nome}" removido com sucesso!`);
+  console.log(`Produto "${produtoRemovido.nome}" removido com sucesso!`);
 }
 
